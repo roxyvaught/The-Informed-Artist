@@ -1,4 +1,5 @@
 
+
 async function loginFormHandler(event) {
     event.preventDefault();
   
@@ -48,7 +49,8 @@ async function loginFormHandler(event) {
         alert(response.statusText);
       }
     }
-  }
- 
+  };
+
+  
  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
