@@ -5,21 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Informed Artist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div class="wrapper">
     <header>
+     <nav class="navbar sticky-top navbar-expand-lg bg-dark
+       justify-content-between">
       <h1>
         <a href="/">The Informed Artist</a>
       </h1>
-      <nav>
         {{#if loggedIn}}
-          <a href="/dashboard">dashboard</a>
-         <button id="logout" class="btn-no-style">logout</button>
+         <form class="form-inline">
+    <input class="form-control border border-right-0" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+  </form>
+          <a class="justify-content-between" href="/dashboard">Dashboard</a>
+         <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
+
         <button type="button" class="btn btn-primary float-right" data-toggle="modal" id="login" data-target="#loginModal">login</button>
 
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -35,9 +42,13 @@
         </div>
       </div>
 
+
+         <a href="/login">Login</a>
         {{/if}}
       </nav>
+      
     </header>
+    <div class="wrapper">
     <main>
       {{{ body }}}
     </main>
