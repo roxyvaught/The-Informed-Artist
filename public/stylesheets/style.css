@@ -64,8 +64,12 @@ input:focus {
 textarea {
     min-width: 40%;
     min-height: 100px;
-}
-
+  }
+  
+  form label {
+    display: flex;
+  }
+  
 form>div {
     margin-bottom: 2%;
     color: rgb(100, 214, 214);
@@ -194,6 +198,13 @@ footer {
     border-top: 1px solid #131111;
     display: flex;
     justify-content: center;
+
+    padding: 1%;
+    font-size: 110%;
+  }
+
+  .row {
+    margin-right: none;
     font-size: 1.5em;
     font-family: 'Pacifico', cursive;
     color: rgb(100, 214, 214);
