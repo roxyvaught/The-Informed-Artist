@@ -250,7 +250,7 @@ p {
     flex-grow: 0;
 };
 
-.nav-link {
+.nav-link .navbar-nav {
     margin: .2rem;
 }
 

@@ -21,12 +21,12 @@
 
           <form class="form-inline navbar-right">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-search" type="submit">Search</button>
+            <button class="btn btn-outline-search my-1" type="submit">Search</button>
           </form>
 
         {{#if loggedIn}}
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mediaNav" aria-controls="mediaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mt-auto" type="button" data-toggle="collapse" data-target="#mediaNav" aria-controls="mediaNav" aria-expanded="false" aria-label="Toggle navigation">
            <span class="dark-blue-text">
              <i class="fas fa-bars"></i>
           </span>
@@ -34,10 +34,10 @@
 
         <div class="collapse navbar-collapse" id="mediaNav">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item my-1">
                   <a class="nav-link btn btn-outline-info" href="/dashboard">Dashboard</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item my-1">
                   <a class="nav-link btn btn-outline-info" id="logout" href="#">Logout</a>
                 </li>
               </ul>
