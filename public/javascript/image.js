@@ -7,7 +7,9 @@ form.addEventListener('submit', event => {
     myHeaders.append("Authorization", "Client-ID feae38853c20803");
 
     var  formdata = new FormData();
-    formdata.append("image", "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7")
+    const image = document.getElementById('image-input');
+    // returns an array
+    formdata.append("image", image.files[0])
 
     var requestOptions = {
         method: 'POST',
@@ -16,7 +18,17 @@ form.addEventListener('submit', event => {
         redirect: 'follow'
     };
     fetch("https://api.imgur.com/3/image", requestOptions)
-        .then(response => response.text())
+        .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 });
+
+/*
+   <form>
+      <input name="image" id="image-input" accept="image/*" type= "file">
+      <button type="submit">Submit</button> 
+   </form>
+
+    <script src="/javascript/image.js"></script>
+
+*/
