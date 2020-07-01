@@ -1,31 +1,184 @@
-<section>
-   <h2>Create New Post</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <h1 id="welcomeMess">Welcome, {{user.name}}! Tell us more about you and your art 
+      </h1>
+    </div>
+  </div>
+</div>
 
-   <form class="new-post-form">
-      <div>
-         <label for="post-title">Title of your Post</label>
-         <input type="text" id="post-title" name="post-title" />
+<div class="container">
+
+  <div class="card">
+    <div class="card-header">
+
+    </div>
+
+    <div class="card-body d-none" id="profile">
+      <div class="row">
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <div id="img-container">
+            <div class="ratio img-responsive img-circle" style="background-image: url({{user.profilePicture}};">
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-10 col-lg-10 col-md-6 col-sm-12 col-12 topmargin">
+          <h4 class="dark">Add A Profile Picture</h4>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile02">
+              <label class="custom-file-label" for="inputGroupFile02">
+                <span id="profilePicTemp">Choose file</span>
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-         <label for="post-url">What is on your mind?</label>
-         <input type="text" id="post-url" name="post-url" />
+      <h4 class="dark topmargin">Add A Short Bio</h4>
+      <div class="form" id="moveSave2">
+        <div class="form-group">
+          <textarea class="form-control" id="shortBio" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="bioSave" data-toggle="modal" data-target="#bioModal">Save</button>
+
+
       </div>
-      <button type="submit" class="btn">Create</button>
-   </form>
-</section>
+    </div>
+    <div id="artClass" class="card-body d-none">
+      <div class="row">
 
-{{#if posts.length}}
-<section>
-   <h2>Your Posts</h2>
-   <ol>
-      {{#each posts as |post|}}
-         <li>
-            {{> post-info post }}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-         </li>
-      {{/each}}
-   </ol>
-</section>
-{{/if}}
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4 class="dark">What category does your posted art fall under?</h4>
+        </div>
+      </div>
+      <div class="row" id="artFeed">
 
-<script src="/javascript/add-post.js"></script>
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- paint-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="Painting" value="Painting">
+              <img class="card-img-top" src="" alt="Painting">
+            </div>
+          </label>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- mixed media-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="mixedMedia" value="Mixed Media">
+
+              <img class="card-img-top" src="" alt="Mixed Media">
+            </div>
+          </label>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- team-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="Drawing" value="Drawing">
+              <img class="card-img-top" src="" alt="Drawing">
+            </div>
+          </label>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- team-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="watercolor" value="Watercolor">
+              <img class="card-img-top" src="" alt="Watercolor">
+            </div>
+          </label>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- team-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="Ink" value="Ink">
+              <img class="card-img-top" src="" alt="Ink">
+            </div>
+          </label>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- team-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="Graphite" value="Graphite">
+              <img class="card-img-top" src="" alt="Graphite">
+            </div>
+          </label>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- team-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="Sculpture" value="Sculpture">
+              <img class="card-img-top" src="" alt="Sculpture">
+            </div>
+          </label>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- team-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="Printmaking" value="Printmaking">
+              <img class="card-img-top" src="" alt="Printmaking">
+            </div>
+          </label>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+          <!-- team-img -->
+          <label>
+            <div class="card">
+              <input class="single-checkbox" type="checkbox" name="category2" id="" value="">
+              <img class="card-img-top" src="" alt="">
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="row" id="moveSave">
+        <div class="container">
+          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Modal" id="saveArtClass">Save</button>
+
+          </div>
+      </div>
+    </div>
+    
+    
+
+    <div class="card-body" id="portfolio">
+      <div class="row mb40">
+        <div class="col">
+          <img class="card-img" src="{{user.portfolio_1}}" alt="Card image cap">
+        </div>
+        <div class="col">
+          <img class="card-img" src="{{user.portfolio_2}}" alt="Card image cap">
+        </div>
+        <div class="col">
+          <img class="card-img" src="{{user.portfolio_3}}" alt="Card image cap">
+        </div>
+        <div class="col">
+          <img class="card-img" src="{{user.portfolio_4}}" alt="Card image cap">
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" data-toggle="modal" data-target="#modalUpload" id="inputGroupFile04">
+          <label class="custom-file-label" for="inputGroupFile04">
+            <span id="tempFile">Choose file</span>
+        </div>
+
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>

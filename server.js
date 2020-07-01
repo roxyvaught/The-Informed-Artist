@@ -6,7 +6,12 @@ const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 const session = require('express-session');
+
+// Requiring passport as we've configured it
+// var passport = require("./config/passport");
+
 const serveStatic = require('serve-static')
+
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
