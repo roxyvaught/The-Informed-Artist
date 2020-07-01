@@ -13,44 +13,46 @@
 
 <body>
     <header>
-     <nav class="navbar sticky-top navbar-expand-lg bg-dark
-       justify-content-between">
+
+     <nav class="navbar sticky-top navbar-expand-lg bg-dark justify-content-around">
       <h1>
         <a href="/">The Informed Artist</a>
       </h1>
+      <div class="float-right">
+          <form class="form-inline ">
+            <input class="form-control border border-right-0" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
         {{#if loggedIn}}
-         <form class="form-inline">
-    <input class="form-control border border-right-0" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-  </form>
+
           <a class="justify-content-between" href="/dashboard">Dashboard</a>
-         <button id="logout" class="btn-no-style">Logout</button>
+          <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
 
         <button type="button" class="btn btn-primary float-right" data-toggle="modal" id="login" data-target="#loginModal">login</button>
 
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="loginModalLabel">Login or Register!</h5>
-            </div>
-            <div class="modal-body">
-              {{> login}}
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-         <a href="/login">Login</a>
         {{/if}}
+
       </nav>
       
     </header>
     <div class="wrapper">
     <main>
       {{{ body }}}
+
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="loginModalLabel">Login or Register!</h5>
+                </div>
+                <div class="modal-body">
+                  {{> login}}
+                </div>
+            </div>
+          </div>
+        </div>
     </main>
     <footer>
       Thank you for visiting The Informed Artist!
@@ -60,7 +62,7 @@
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{else}}
-  <script src="/javascript/login-modal.js"></script>
+  <script src="/javascript/login.js"></script>
   {{/if}}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
