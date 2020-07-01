@@ -115,14 +115,24 @@ main {
 .btn-outline-info {
     background: none;
     border: none;
-    padding: 0;
     cursor: pointer;
     text-decoration: none;
     color: var(--main-color);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
-    margin-left: 16px;
+    font-family: 'Pacifico', cursive;
+}
+
+.btn-outline-search {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
     font-family: 'Pacifico', cursive;
 }
 
@@ -234,4 +244,26 @@ p {
 
 .meta {
     color: var(--main-color);
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+};
+
+.nav-link {
+    margin: .2rem;
+}
+
+.navbar-toggler {
+    background-color: var(--main-color);
+}
+
+@media only screen and (min-width: 768px){
+    .btn-outline-info {
+        margin-left: 15px;
+    }
+
+    .form-inline {
+        flex-flow: row wrap;
+    }
 }

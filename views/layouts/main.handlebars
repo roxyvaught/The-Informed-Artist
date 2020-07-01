@@ -8,24 +8,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header>
 
-     <nav class="navbar navbar-fixed-top navbar-inverse bg-dark justify-content-space-around" role="navigation">
-<div class="flex-grow-1">
+     <nav class="navbar navbar-fixed-top navbar-expand-md navbar-inverse bg-dark justify-content-space-around" role="navigation">
+          <div class="flex-grow-1">
             <a class="navbar-brand" href="/">The Informed Artist</a>
-</div>
+          </div>
+
           <form class="form-inline navbar-right">
-            <input class="form-control border border-right-0" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-search" type="submit">Search</button>
           </form>
+
         {{#if loggedIn}}
 
-          <a href="/dashboard" class="btn btn-outline-info">Dashboard</a>
-          <button id="logout" class="btn btn-outline-info">Logout</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mediaNav" aria-controls="mediaNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="dark-blue-text">
+             <i class="fas fa-bars"></i>
+          </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mediaNav">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link btn btn-outline-info" href="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn btn-outline-info" id="logout" href="#">Logout</a>
+                </li>
+              </ul>
+          </div>
         {{else}}
 
         <button type="button" class="btn btn-outline-info" data-toggle="modal" id="login" data-target="#loginModal">login</button>
