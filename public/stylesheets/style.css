@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-color: rgb(100, 214, 214);
+}
+
 body,
 html {
     height: 100%;
@@ -18,7 +22,7 @@ body {
 
 a {
     text-decoration: none;
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
     font-weight: bold;
     transition: color .1s;
     font-family: 'Pacifico', cursive;
@@ -29,7 +33,7 @@ a:hover {
 }
 
 button {
-    background-color: rgb(100, 214, 214);
+    background-color: var(--main-color);
     border: 0;
     padding: 1%;
     color: white;
@@ -58,7 +62,7 @@ input {
 textarea:focus,
 input:focus {
     outline: none;
-    border: 1px solid rgb(100, 214, 214);
+    border: 1px solid var(--main-color);
 }
 
 textarea {
@@ -72,12 +76,12 @@ textarea {
   
 form>div {
     margin-bottom: 2%;
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
 }
 
 form label {
     display: flex;
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
 }
 
 .wrapper {
@@ -96,7 +100,7 @@ header {
 header h1 {
     font-size: 1.5em;
     font-family: 'Pacifico', cursive;
-    color: rgb(100, 214, 214),
+    color: var(--main-color);
 }
 
 header nav {
@@ -114,7 +118,7 @@ main {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -148,7 +152,7 @@ main {
 .post .title span {
     font-style: italic;
     font-size: 90%;
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
 }
 
 .edit-link {
@@ -172,18 +176,18 @@ main {
 .comment {
     padding: 1%;
     margin-bottom: 1%;
-    background-color: lightskyblue;
+    background-color: var(--main-color);
 }
 
 .comment:nth-child(odd) {
-    background-color: lightskyblue;
+    background-color: var(--main-color);
 }
 
 .comment .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
 }
 
 .new-post-form input {
@@ -207,13 +211,13 @@ footer {
     margin-right: none;
     font-size: 1.5em;
     font-family: 'Pacifico', cursive;
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
     margin-bottom: 10px;
 }
 
 .ol {
     list-style-type: none;
-    background-color: rgb(100, 214, 214);
+    background-color: var(--main-color);
 }
 
 .card {
@@ -221,13 +225,13 @@ footer {
 }
 
 h2 {
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
 }
 
 p {
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
 }
 
 .meta {
-    color: rgb(100, 214, 214);
+    color: var(--main-color);
 }
