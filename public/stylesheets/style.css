@@ -1,32 +1,39 @@
 * {
     box-sizing: border-box;
-  }
-  
-  body, html {
+}
+
+:root {
+    --main-color: rgb(100, 214, 214);
+}
+
+body,
+html {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: #333;
-  }
-  
-  body {
-    background-color: lightskyblue;
-  }
-  
-  a {
+}
+
+body {
+    background-color: rgb(45, 46, 46);
+    opacity: .8;
+}
+
+a {
     text-decoration: none;
-    color: #225ca3;
+    color: var(--main-color);
     font-weight: bold;
     transition: color .1s;
-  }
-  
-  a:hover {
-    color: #3486eb;
-  }
-  
-  button {
-    background-color: #225ca3;
+    font-family: 'Pacifico', cursive;
+}
+
+a:hover {
+    color: rgb(3, 146, 146);
+}
+
+button {
+    background-color: var(--main-color);
     border: 0;
     padding: 1%;
     color: white;
@@ -34,154 +41,182 @@
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #3486eb;
-  }
-  
-  .post-list {
+}
+
+button:hover {
+    background-color: rgb(3, 146, 146);
+}
+
+.post-list {
     margin: 0;
     padding: 0;
-  }
-  
-  textarea, input {
+}
+
+textarea,
+input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
-  
-  textarea:focus, input:focus {
+}
+
+textarea:focus,
+input:focus {
     outline: none;
-    border: 1px solid #3486eb;
-  }
-  
-  textarea {
+    border: 1px solid var(--main-color);
+}
+
+textarea {
     min-width: 40%;
     min-height: 100px;
   }
   
-  form > div {
-    margin-bottom: 2%;
-  }
-  
   form label {
-    display: block;
+    display: flex;
   }
   
-  .wrapper {
+form>div {
+    margin-bottom: 2%;
+    color: var(--main-color);
+}
+
+form label {
+    display: flex;
+    color: var(--main-color);
+}
+
+.wrapper {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-  }
-  
-  header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  }
-  
-  header h1 {
-    font-size: 1em;
-  }
-  
-  main {
+}
+
+header {
+    border-bottom: 1px double rgb(17, 13, 13);
+}
+
+header h1 {
+    font-size: 1.5em;
+    font-family: 'Pacifico', cursive;
+    color: var(--main-color);
+}
+
+header nav {
+    position: sticky;
+}
+
+main {
     flex: 1;
     padding: 2% 4%;
-  }
-  
-  .btn-no-style {
+}
+
+.btn-outline-info {
     background: none;
     border: none;
-    padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: var(--main-color);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
-    margin-left: 16px;
-  }
-  
-  .btn-no-style:hover {
+    font-family: 'Pacifico', cursive;
+}
+
+.btn-outline-search {
     background: none;
-    color: #3486eb;
-  }
-  
-  .delete-post-btn {
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    font-family: 'Pacifico', cursive;
+}
+
+.btn-no-style:hover {
+    background: none;
+}
+
+.btn {
+    color: rgb(6, 7, 7);
+    background-color: rgb(3, 146, 146);
+}
+
+.delete-post-btn {
     background-color: #d41414;
-  }
-  
-  .delete-post-btn:hover {
+}
+
+.delete-post-btn:hover {
     background-color: #ff643d;
-  }
-  
-  .post {
+}
+
+.post {
     margin-bottom: 2%;
     line-height: 150%;
     border-radius: 12px;
-  }
-  
-  .post .title span {
+}
+
+.post .title span {
     font-style: italic;
     font-size: 90%;
-    color: #7d7d7d;
-  }
-  
-  .edit-link {
+    color: var(--main-color);
+}
+
+.edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
-  }
-  
-  .upvote-btn {
+}
+
+.upvote-btn {
     background-color: #197d0f;
     transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
+}
+
+.upvote-btn:hover {
     background-color: #1f9c13;
-  }
-  
-  .comment-form {
+}
+
+.comment-form {
     margin-bottom: 5%;
-  }
-  
-  .comment {
+}
+
+.comment {
     padding: 1%;
     margin-bottom: 1%;
-    background-color: lightskyblue;
-  }
-  
-  .comment:nth-child(odd) {
-    background-color: lightskyblue;
-  }
-  
-  .comment .meta {
+    background-color: var(--main-color);
+}
+
+.comment:nth-child(odd) {
+    background-color: var(--main-color);
+}
+
+.comment .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
-  }
-  
-  .new-post-form input {
+    color: var(--main-color);
+}
+
+.new-post-form input {
     width: 300px;
-  }
-  
-  .edit-post-form {
+}
+
+.edit-post-form {
     margin-bottom: 5%;
-  }
-  
-  footer {
-    border-top: 1px solid #ccc;
+}
+
+footer {
+    border-top: 1px solid #131111;
     display: flex;
     justify-content: center;
+
     padding: 1%;
     font-size: 110%;
   }
+
 
   #artFeed {
     overflow-x: scroll;
@@ -193,3 +228,55 @@
   #artFeed img {
   border: 0;
   }
+
+  .row {
+    margin-right: none;
+    font-size: 1.5em;
+    font-family: 'Pacifico', cursive;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.ol {
+    list-style-type: none;
+    background-color: var(--main-color);
+}
+
+.card {
+    background-color: rgb(133, 146, 146);
+}
+
+h2 {
+    color: var(--main-color);
+}
+
+p {
+    color: var(--main-color);
+}
+
+.meta {
+    color: var(--main-color);
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+};
+
+.nav-link .navbar-nav {
+    margin: .2rem;
+}
+
+.navbar-toggler {
+    background-color: var(--main-color);
+}
+
+@media only screen and (min-width: 768px){
+    .btn-outline-info {
+        margin-left: 15px;
+    }
+
+    .form-inline {
+        flex-flow: row wrap;
+    }
+}
+
