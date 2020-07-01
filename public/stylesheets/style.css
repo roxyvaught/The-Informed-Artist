@@ -182,3 +182,14 @@
     padding: 1%;
     font-size: 110%;
   }
+
+  #artFeed {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  margin:20px 0px;
+    flex-wrap: unset;
+  }
+  
+  #artFeed img {
+  border: 0;
+  }

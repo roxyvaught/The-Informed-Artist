@@ -87,4 +87,47 @@ router.get('/edit/:id', withAuth, (req, res) => {
       });
 });
 
+router.put("/bio/:id", function (req, res) {
+
+   db.User.update({
+     short_bio: req.body.short_bio
+   }, {
+     where: {
+       id: req.params.id
+     }
+   }).then(function () {
+     console.log("success");
+     req.session.passport.user.short_bio = req.body.short_bio;
+     req.session.save(function (err) {
+       console.log(err);
+     });
+     res.sendStatus(200);
+   }).catch(function (err) {
+     console.log(err);
+     // res.redirect("/members");
+   });
+ });
+
+ router.put("/api/profilePic/:id", function (req, res) {
+
+   db.User.update({
+     profilePicture: req.body.profilePicture,
+   }, {
+     where: {
+       id: req.params.id
+     }
+   }).then(function () {
+     console.log("profile picture saved successfully");
+
+     // location.replace(data);
+     req.session.passport.user.profilePicture = req.body.profilePicture;
+     req.session.save(function (err) {
+       console.log(err);
+     });
+     res.sendStatus(200);
+   }).catch(function (err) {
+
+     console.log(err);
+   });
+ });
 module.exports = router;
