@@ -1,3 +1,4 @@
+  
 const form = document.querySelector('form');
 imageEl = document.querySelector('.imgurImage');
 
@@ -33,7 +34,5 @@ form.addEventListener('submit', event => {
       <input name="image" id="image-input" accept="image/*" type= "file">
       <button type="submit">Submit</button> 
    </form>
-
     <script src="/javascript/image.js"></script>
-
 */
