@@ -1,4 +1,5 @@
 const form = document.querySelector('form');
+imageEl = document.querySelector('.imgurImage');
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -21,6 +22,8 @@ form.addEventListener('submit', event => {
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+        var imgurImg = data['link']
+        imageEl.setAttribute('src', imgurImg)
 });
 
 /*
