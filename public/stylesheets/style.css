@@ -217,18 +217,6 @@ footer {
     font-size: 110%;
   }
 
-
-  #artFeed {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  margin:20px 0px;
-    flex-wrap: unset;
-  }
-  
-  #artFeed img {
-  border: 0;
-  }
-
   .row {
     margin-right: none;
     font-size: 1.5em;
@@ -269,6 +257,61 @@ p {
 .navbar-toggler {
     background-color: var(--main-color);
 }
+
+/*Dashboard*/
+
+#userTabs {
+    vertical-align: bottom;
+  }
+
+.mb40{
+    margin-bottom:20px;
+  }
+
+  #artFeed {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  margin:20px 0px;
+    flex-wrap: unset;
+  }
+  
+  #artFeed img {
+  border: 0;
+  }
+  
+  /* IMAGE CIRCLE */
+.img-circle {
+    border-radius: 50%;
+  }
+  .img-circle {
+    border-radius: 0;
+  }
+  
+  .ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+  }
+  .img-circle {
+    border-radius: 50%;
+    -webkit-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+    -moz-box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+    box-shadow: -1px 3px 12px 0px rgba(0,0,0,0.21);
+    
+  }
+  .img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    
+  }
+  /* END IMAGE CIRCLE */
+
+/*End Dashboard*/ 
 
 @media only screen and (min-width: 768px){
     .btn-outline-info {

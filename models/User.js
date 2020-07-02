@@ -48,8 +48,13 @@ User.init(
             // this means the password must be at least four characters long
             len: [4]
          }
+      },
+      profilePicture: {
+         type: DataTypes.STRING,
+         defaultValue: "images/profileDefault-230.png"
       }
    },
+
    {
       hooks: {
          // set up beforeCreate lifecycle "hook" functionality
