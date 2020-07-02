@@ -1,4 +1,6 @@
+  
 const form = document.querySelector('form');
+imageEl = document.querySelector('.imgurImage');
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -19,8 +21,12 @@ form.addEventListener('submit', event => {
     };
     fetch("https://api.imgur.com/3/image", requestOptions)
         .then(response => response.json())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        .then(data => {
+            console.log(data)
+            console.log(data.data.link)
+            var imgurImg = data.data.link
+            imageEl.setAttribute('src', imgurImg)
+        })
 });
 
 /*
@@ -28,7 +34,5 @@ form.addEventListener('submit', event => {
       <input name="image" id="image-input" accept="image/*" type= "file">
       <button type="submit">Submit</button> 
    </form>
-
     <script src="/javascript/image.js"></script>
-
 */

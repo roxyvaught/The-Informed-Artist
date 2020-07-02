@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <h1 id="welcomeMess">Welcome, {{username}}! Tell us more about you and your art 
+      <h1 id="welcomeMess">Welcome! Tell us more about you and your art 
       </h1>
     </div>
   </div>
@@ -20,8 +20,6 @@
             <li class="nav-item">
               <a class="nav-link" id="profile-link">Profile</a>
             </li>
-
-
           </ul>
         </div>
         <div class="col">
@@ -36,7 +34,8 @@
       <div class="row">
         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
           <div id="img-container">
-            <div class="ratio img-responsive img-circle" style="background-image: url({{user.profilePicture}};">
+            <div class="ratio img-responsive img-circle">
+                       <img class="imgurImage" src=""></img>
             </div>
           </div>
         </div>
@@ -44,10 +43,10 @@
           <h4 class="dark">Add A Profile Picture</h4>
           <div class="input-group mb-3">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile02">
-              <label class="custom-file-label" for="inputGroupFile02">
-                <span id="profilePicTemp">Choose file</span>
-              </label>
+              <form>
+                <input name="image" id="image-input" accept="image/*" type= "file">
+                <button class="btn-lg" type="submit">Submit</button> 
+              </form>
             </div>
           </div>
         </div>
@@ -85,7 +84,7 @@
 
       <div class="row mb40">
         <div class="col">
-          <img class="card-img" src="{{user.portfolio_1}}" alt="Card image cap">
+          <img class="imgurImage" src="" alt="Card image cap">
         </div>
         <div class="col">
           <img class="card-img" src="{{user.portfolio_2}}" alt="Card image cap">
@@ -173,7 +172,7 @@
           <label>
             <div class="card">
               <input class="single-checkbox" type="checkbox" name="category2" id="Ink" value="Ink">
-              <img class="card-img-top" src="/../images/ink.jpg" alt="Ink">
+              <a href="/"><img class="card-img-top" src="/../images/ink.jpg" alt=""></a>
             </div>
           </label>
         </div>
@@ -183,7 +182,7 @@
           <label>
             <div class="card">
               <input class="single-checkbox" type="checkbox" name="category2" id="Graphite" value="Graphite">
-              <img class="card-img-top" src="/../images/graph.jpg" alt="Graphite">
+              <img class="card-img-top" src="/public/‫images/graph.jpg" alt="">
             </div>
           </label>
         </div>
@@ -193,7 +192,7 @@
           <label>
             <div class="card">
               <input class="single-checkbox" type="checkbox" name="category2" id="Sculpture" value="Sculpture">
-              <img class="card-img-top" src="/../images/sculpture.jpg" alt="Sculpture">
+              <img class="card-img-top" src="/public/‫images/sculpture.jpg" alt="Sculpture">
             </div>
           </label>
         </div>
@@ -202,11 +201,9 @@
           <label>
             <div class="card">
               <input class="single-checkbox" type="checkbox" name="category2" id="Printmaking" value="Printmaking">
-              <img class="card-img-top" src="/../images/print.jpg" alt="Printmaking">
+              <img class="card-img-top" src="/public/‫images/print.jpg" alt="Printmaking">
             </div>
           </label>
-        </div>
-        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
         </div>
       </div>
 
