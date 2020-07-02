@@ -20,10 +20,12 @@ form.addEventListener('submit', event => {
     };
     fetch("https://api.imgur.com/3/image", requestOptions)
         .then(response => response.json())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-        var imgurImg = data['link']
-        imageEl.setAttribute('src', imgurImg)
+        .then(data => {
+            console.log(data)
+            console.log(data.data.link)
+            var imgurImg = data.data.link
+            imageEl.setAttribute('src', imgurImg)
+        })
 });
 
 /*
