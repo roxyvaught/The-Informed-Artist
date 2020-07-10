@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 
 require('dotenv').config();
 
-// create connection to our database, use .ENV file for user, pass, and database
+// create connection to our database, pass in your MySQL information for use
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
         host: 'localhost',
         dialect: 'mysql',
         port: 3306
-      });
+    });
 }
 
 module.exports = sequelize;

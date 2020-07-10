@@ -1,96 +1,106 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Post, User, pic } = require('../models');
+const withAuth = require('../utils/auth')
 
+//init render if not logged in
 router.get('/', (req, res) => {
-   console.log(req.session);
-
-   Post.findAll({
-      attributes: [
-         'id',
-         'post_url',
-         'title',
-         'created_at',
-         [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-      ],
-      include: [
-         {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-               model: User,
-               attributes: ['username']
-            }
-         },
-         {
-            model: User,
-            attributes: ['username']
-         }
-      ]
-   }).then(dbPostData => {
-         // pass a single post object into the homepage template
-         console.log(dbPostData[0]);
-         const posts = dbPostData.map(post => post.get({ plain: true }));
-         res.render('homepage', { 
-            posts,
-            loggedIn: req.session.loggedIn
-         });
-      }).catch(err => {
-         console.log(err);
-         res.status(500).json(err);
-      });
-});
-
-router.get('/login', (req, res) => {
-   if (req.session.loggedIn) {
-     res.redirect('/');
+   if (req.session.loggedIn) { //add session id?
+     const id = req.session.user_id
+     res.redirect(`/pics/${id}`);
      return;
    }
  
    res.render('login');
 });
 
-router.get('/post/:id', (req, res) => {
-   Post.findOne({
+//when logged in single pics artists
+router.get('/posts/:id',withAuth, (req, res) => {
+   console.log(req.session);
+    Post.findAll({
+       where: {
+          pic_id: req.params.id
+       },
+      attributes: [
+         'id',
+         'post_url',
+         'title',
+         'notes',
+         'pic_id',
+         'created_at',
+      ],
+      include: [
+         {
+            model: pic,
+            attributes: ['id', 'user_id', 'title', 'created_at'],
+            include: {
+               model: User,
+               attributes: ['username']
+            }
+         },
+     /*    {
+            model: User,
+            attributes: ['username']
+         } */
+      ]
+   })
+      .then(dbPostData => {
+         // pass a single post object into the homepage template
+         console.log(dbPostData[0]);
+         const posts = dbPostData.map(post => post.get({ plain: true }));
+         res.render('pic', { 
+            posts,
+            loggedIn: req.session.loggedIn
+         });
+      })
+      .catch(err => {
+         console.log(err);
+         res.status(500).json(err);
+      });
+});
+
+
+//when loged in all users pics
+router.get('/pics/:id',withAuth, (req, res) => {
+   console.log(req.session)
+   pic.findAll({
      where: {
-       id: req.params.id
+       user_id: req.params.id
      },
      attributes: [
        'id',
-       'post_url',
-       'title',
+        'title',
+        'user_id',
        'created_at',
-       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      
      ],
      include: [
        {
-         model: Comment,
-         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-         include: {
-           model: User,
-           attributes: ['username']
-         }
-       },
-       {
          model: User,
-         attributes: ['username']
-       }
+         attributes: ['id','username'],
+         },
+        { model: Post,
+         attributes: ['id']
+
+       },
+      
      ]
-   }).then(dbPostData => {
-       if (!dbPostData) {
-         res.status(404).json({ message: 'No post found with this id' });
-         return;
-       }
+   })
+     .then(dbpicData => {
+        console.log(dbpicData)
+       
+     
  
        // serialize the data
-       const post = dbPostData.get({ plain: true });
+       const pics = dbpicData.map(pic => pic.get({ plain: true }));
  
        // pass data to template
-       res.render('single-post', { 
-          post, 
-          loggedIn: req.session.loggedIn
+       res.render('homepage', { 
+          pics, 
+         loggedIn: req.session.loggedIn
          });
-     }).catch(err => {
+     })
+     .catch(err => {
        console.log(err);
        res.status(500).json(err);
      });

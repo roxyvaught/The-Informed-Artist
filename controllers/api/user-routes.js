@@ -1,19 +1,23 @@
 const router = require('express').Router();
-const { Comment, User, Post, Vote } = require('../../models');
+const { pic, User, Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Fetch all
+// GET /api/users
 router.get('/', (req, res) => {
    // Access our User model and run .findAll() method
    User.findAll({
       attributes: { exclude: ['password'] }
-   }).then(dbUserData => res.json(dbUserData)).catch(err => {
+   })
+      .then(dbUserData => res.json(dbUserData))
+      .catch(err => {
          console.log(err);
          res.status(500).json(err);
       });
 });
 
-// Fetch one
+
+
+// GET /api/users/1
 router.get('/:id', (req, res) => {
    User.findOne({
       attributes: { exclude: ['password'] },
@@ -25,34 +29,40 @@ router.get('/:id', (req, res) => {
             model: Post,
             attributes: ['id', 'title', 'post_url', 'created_at']
          },
+   
          {
-            model: Comment,
+            model: pic,
             attributes: ['id', 'comment_text', 'created_at'],
             include: {
                model: Post,
                attributes: ['title']
             }
          }
+     
       ]
-    }).then(dbUserData => {
+    })
+      .then(dbUserData => {
          if (!dbUserData) {
             res.status(404).json({ message: 'No user found with this id' });
             return;
          }
          res.json(dbUserData);
-      }).catch(err => {
+      })
+      .catch(err => {
          console.log(err);
          res.status(500).json(err);
       });
 });
 
-// CREATE route
+// POST /api/users
 router.post('/', (req, res) => {
+   // expects {username: 'Feuerbacher', email: 'feuerbacherb@gmail.com', password: 'password1234'}
    User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password
-   }).then(dbUserData => {
+   })      
+      .then(dbUserData => {
          req.session.save(() => {
          req.session.user_id = dbUserData.id;
          req.session.username = dbUserData.username;
@@ -60,7 +70,8 @@ router.post('/', (req, res) => {
       
          res.json(dbUserData);
          });
-      }).catch(err => {
+      })
+      .catch(err => {
          console.log(err);
          res.status(500).json(err);
       });
@@ -107,8 +118,9 @@ router.post('/login', (req, res) => {
     }
 });
 
-// UPDATE route
+// PUT /api/users/1
 router.put('/:id', withAuth, (req, res) => {
+   // expects {username: 'Feuerbacher', email: 'feuerbacherb@gmail.com', password: 'password1234'}
 
    // if req.body has exact key/value pairs to match the model, you can just use the `req.body` instead
    User.update(req.body, {
@@ -116,31 +128,35 @@ router.put('/:id', withAuth, (req, res) => {
       where: {
          id: req.params.id
       }
-   }).then(dbUserData => {
+   })
+      .then(dbUserData => {
          if (!dbUserData[0]) {
             res.status(404).json({ message: 'No user found with this id '});
             return;
          }
          res.json(dbUserData);
-      }).catch(err => {
+      })
+      .catch(err => {
          console.log(err);
          res.status(500).json(err);
       });
 });
 
-// DESTROY route
+// DELETE /api/users/1
 router.delete('/:id', withAuth, (req, res) => {
    User.destroy({
       where: {
          id: req.params.id
       }
-   }).then(dbUserData => {
+   })
+      .then(dbUserData => {
          if (!dbUserData) {
             res.status(404).json({ message: 'No user found with this id' });
             return;
          }
          res.json(dbUserData);
-      }).catch(err => {
+      })
+      .catch(err => {
          console.log(err);
          res.status(500).json(err);
       });

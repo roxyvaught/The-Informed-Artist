@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -12,7 +13,7 @@ html {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: #333;
+    color: #F6FEFF;
 }
 
 body {
@@ -212,10 +213,10 @@ footer {
     border-top: 1px solid #131111;
     display: flex;
     justify-content: center;
-
+    font-size: 1em;
     padding: 1%;
     font-size: 110%;
-  }
+}
 
   .row {
     margin-right: none;
@@ -248,7 +249,7 @@ p {
 
 .navbar-collapse {
     flex-grow: 0;
-};
+}
 
 .nav-link .navbar-nav {
     margin: .2rem;
@@ -260,34 +261,50 @@ p {
 
 /*Dashboard*/
 
+#pic-user {
+    font-size: 16px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #F6FEFF;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none; 
+}
+
 #userTabs {
     vertical-align: bottom;
-  }
+}
 
-.mb40{
-    margin-bottom:20px;
-  }
+.mb40 {
+    margin-bottom: 20px;
+}
 
-  #artFeed {
+#artFeed {
     overflow-x: scroll;
     overflow-y: hidden;
-  margin:20px 0px;
+    margin: 20px 0px;
     flex-wrap: unset;
-  }
-  
-  #artFeed img {
-  border: 0;
-  }
-  
-  /* IMAGE CIRCLE */
+
+}
+
+#artFeed img {
+    border: 0;
+}
+
+
+/* IMAGE CIRCLE */
+
 .img-circle {
     border-radius: 50%;
-  }
-  .img-circle {
+}
+
+.img-circle {
     border-radius: 0;
-  }
-  
-  .ratio {
+}
+
+.ratio {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -295,6 +312,33 @@ p {
     padding-bottom: 100%;
     position: relative;
     width: 100%;
+}
+
+.img-circle {
+    border-radius: 50%;
+    -webkit-box-shadow: -1px 3px 12px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: -1px 3px 12px 0px rgba(0, 0, 0, 0.21);
+    box-shadow: -1px 3px 12px 0px rgba(0, 0, 0, 0.21);
+}
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+
+/* END IMAGE CIRCLE */
+
+
+/*End Dashboard*/
+
+@media only screen and (min-width: 768px) {
+    .btn-outline-info {
+        margin-left: 15px;
+    }
+    .form-inline {
+        flex-flow: row wrap;
   }
   .img-circle {
     border-radius: 50%;
@@ -323,3 +367,6 @@ p {
     }
 }
 
+.modal-content {
+    width: 60%;
+}

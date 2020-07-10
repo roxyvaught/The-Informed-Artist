@@ -1,0 +1,31 @@
+ <div id="edit-artist-modal" class="edit-artist-modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+         
+        <a href="/posts/{{post.pic_id}}" id="close-edit-artist" class="close">&times;</a>
+        <form action="#" class="edit-post-form">
+          <div class="  -textfield   -js-textfield   -textfield--floating-label">
+            <input class="  -textfield__input" type="text" id="" value="{{post.post_url}}" name="edit-post-url">
+            <label class="  -textfield__label" >Edit Name:</label>
+          </div>
+          <div class="  -textfield   -js-textfield   -textfield--floating-label">
+            <input class="  -textfield__input" type="text" id="" value="{{post.title}}" name="edit-post-title">
+            <label class="  -textfield__label" >Edit Price:</label>
+          </div>
+          <div class="  -textfield   -js-textfield   -textfield--floating-label">
+            <textarea class="  -textfield__input" type="text" rows="4" id="" value="{{post.notes}}" name="edit-notes"></textarea>
+            <label class="  -textfield__label" >Edit Contact:</label>
+          </div>
+          <button class="button" type="submit">
+         Save
+        </button> 
+        <button id="delete-artist" class="button">
+          Delete Artist Information
+        </button>
+        </form>
+        
+      </div>
+    
+    </div>
+    <script src="/javascript/edit-artist.js"></script>

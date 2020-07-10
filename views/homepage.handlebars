@@ -1,59 +1,96 @@
-<div class="card-columns">
-  <div class="card">
-   <a href="/"><img src="/../‫images/painting.jpg" class="card-img-top" alt="painting"></a>
-    <div class="card-body">
-      <h5 class="card-title">Painting</h5>
-      <p class="card-text">Please click the image above to view our artist's selections of Paintings!</p>
+ <div class="">
+    <header>
+      
+      <div class="">
+      <h1 class="">The Informed Artist</h1>
+      
+      </div>
+     
+  <div class="util-container"></div>
+  <nav class="btn-toolbar btn-group-lg" role="group">
+ 
+         <button class="button" title="Add an Image" id="add-pic">
+           <i class="material-icons">add</i>
+        </button>
+      </nav>
+   
+            {{#if pics}}
+               <span class=" -chip">
+               <span class=" -chip__text" id="pic-user">{{pics.0.user.username}}</span>
+               </span>
+             {{/if}}
+      </section>
     </div>
-  </div>
- <div class="card">
-    <a href="/"><img src="/../‫images/mmed.jpg" class="card-img-top" alt="painting"></a>
-    <div class="card-body">
-      <h5 class="card-title">Mixed Media</h5>
-      <p class="card-text">Please select the image above to view our artist's selection of Mixed Media! </p>
+    </header>
+    <main class="field">
+   <!---pics go here-->
+   {{#if pics.length}}
+    {{#each pics}}
+   <div class="pic-card  -card  -shadow--2dp">
+     <a href=""><img src=""></a>
+      <h2 class=" -card__title-text">{{{title}}}</h2>
+     
     </div>
-  </div>
-  <div class="card">
-    <a href="/"><img src="/../‫images/drawing.jpg" class="card-img-top" alt="drawing"></a>
-    <div class="card-body">
-      <h5 class="card-title">Drawing</h5>
-      <p class="card-text">Please select the image above to view our artist's selection of Drawings!</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class=" -card__supporting-text">
+   </div>
+    <div class = " -card__actions">
+     <a class="util-button view-btn  -button  -button--colored  -js-button  -js-ripple-effect" href="/posts/{{id}}">
+         Artist Information
+       </a>
     </div>
-  </div>
- <div class="card">
-   <a href="/"><img src="/../‫images/water.jpg" class="card-img-top" alt="water"></a>
-    <div class="card-body">
-      <h5 class="card-title">Watercolor</h5>
-      <p class="card-text">Please select the image above to view our artist's selection of Watercolors!</p>
+    <div class=" -card__menu">
+      <a href="/edit/pic/{{id}}" class=" edit-pic button ">
+        <i class="material-icons">edit</i>
+      </a>
+     </div>
     </div>
-  </div>
-  <div class="card">
-    <a href="/"><img src="/../‫images/ink.jpg" class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Ink</h5>
-      <p class="card-text">Please select the image above to view our artist's selection of Ink creations!</p>
+    {{/each}}
+    {{else}}
+    <div>
+      <form>
+        <input name="image" id="image-input" accept="image/*" type="file">
+        <button type="submit" onclick="imageReq();" name=:"submit">Submit</button> 
+      </form>
+      <a><p>Image Link: <p class="imgurLink"></p></a>
     </div>
-  </div>
-  <div class="card">
-    <a href="/"><img src="/../‫images/graph.jpg" class="card-img-top" alt="graphite"></a>
-    <div class="card-body">
-      <h5 class="card-title">Graphite</h5>
-      <p class="card-text">Please select the image above to view our artist's selection of Graphite creations!</p>
+    {{/if}}
+  
+    </main>
+
+<!--new pic modal-->
+<div id="pic-modal" class="pic-modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+       
+      <span id="close-pic-modal" class="close">&times;</span>
+      <form action="#" class="new-pic-form">
+        <div class=" -textfield  -js-textfield  -textfield--floating-label">
+          <input class=" -textfield__input" type="text" id="" name="pic-title">
+
+          <label class=" -textfield__label" for="">Add Your Imgur HTML Link</label>
+
+          <label class=" -textfield__label" for="">Add Your Art</label>
+          <p>
+            <textarea disabled>
+            Example: <a href="Imgur Link"><img src="Imgur Link" title="source: imgur.com" /></a>
+            </textarea>
+          </p>
+
+        </div>
+         <button id="new-pic-submit" class="button" title="Submit" type="submit">
+           <i class="material-icons">add</i>
+         </button> 
+      </form>
+        
     </div>
+  
   </div>
-  <div class="card">
-   <a href="/"><img src="/../‫images/sculpture.jpg" class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Sculpture</h5>
-      <p class="card-text">Please select the image above to view our artist's selection of Sculpture Pieces!</p>
-    </div>
-  </div>
-  <div class="card">
-    <a href="/"><img src="/../‫images/print.jpg" class="card-img-top" alt="print"></a>
-    <div class="card-body">
-      <h5 class="card-title">Printmaking</h5>
-      <p class="card-text">Please select the image above to view our artist's selection of Printmaking creations!</p>
-    </div>
-  </div>
+
+
 </div>
+</div>
+<script src="/javascript/homepageModal.js"></script>
+<script src="/javascript/logout.js"></script>
+<script src="/javascript/add-pic.js"></script>
+<script src="/javascript/image.js"></script>

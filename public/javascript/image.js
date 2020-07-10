@@ -1,6 +1,6 @@
-  
+function imageReq(){
 const form = document.querySelector('form');
-imageEl = document.querySelector('.imgurImage');
+imageP = document.querySelector('.imgurLink');
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -24,10 +24,11 @@ form.addEventListener('submit', event => {
         .then(data => {
             console.log(data)
             console.log(data.data.link)
-            var imgurImg = data.data.link
-            imageEl.setAttribute('src', imgurImg)
+            var imgurLink = data.data.link
+            imageP.innerHTML = imgurLink 
         })
 });
+};
 
 /*
    <form>

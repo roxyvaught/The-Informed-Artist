@@ -1,0 +1,83 @@
+ <div class="home">
+    <header>
+      <div class="heading-logo">
+      <h1 class="heading">The Informed Artist</h1>
+      
+      </div>
+
+  <div class="util-container">
+    <nav class="btn-toolbar">
+      <a href="/" class="button" title="Return to Posts" id="">
+        <i class="material-icons">home</i>
+      </a>
+     <button class="button" title="Add an Artist" id="add-artist">
+       <i class="material-icons">add</i>
+     </button> 
+  
+     <button id="logout" class="button" title="Log Out">
+       <i class="material-icons">logout</i>
+    </button>
+  </nav>
+
+  </div>
+    </header>
+    <main class="field">
+     
+       {{#if posts.length}}
+        {{#each posts}}
+           <div class="artist-card   -card   -shadow--2dp ">
+             <div class="  -card__title">
+               <h2 class="  -card__title-text">Artist Name: {{post_url}}</h2>
+              <h2 class="  -card__title-text">Price: {{title}}</h2>
+              </div>
+             <div class="  -card__supporting-text scrollable">
+               Contact: {{notes}}
+             </div>
+             <div class="  -card__menu">
+              <a href="/edit/posts/{{id}}/{{pic_id}}" class="button" id="edit-artist">
+                <i class="material-icons">edit</i>
+              </a>
+            </div>
+           </div>
+           {{/each}}
+        {{else}}
+        </div>
+        {{/if}}
+    <!--Add artist modal-->
+    <div id="add-artist-modal" class="add-artist-modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+         
+        <span id= "close-add-artist" class="close">&times;</span>
+        <form action="#" class="new-post-form">
+          <div class="  -textfield   -js-textfield   -textfield--floating-label">
+            <input class="  -textfield__input" type="text" id="" name="post-url">
+            <label class="  -textfield__label" >Artist Name:</label>
+          </div>
+          <div class="  -textfield   -js-textfield   -textfield--floating-label">
+            <input class="  -textfield__input" type="text" id="" name="post-title">
+            <label class="  -textfield__label" >Price:</label>
+          </div>
+          <div class="  -textfield   -js-textfield   -textfield--floating-label">
+            <textarea class="  -textfield__input" type="text" rows="4" id="" name="notes"></textarea>
+            <label class="  -textfield__label" >Contact:</label>
+          </div>
+          <button id="new-artist-submit" class="  -button   -js-button   -button--fab   -js-ripple-effect " title="Submit" type="submit">
+           <i class="material-icons">add</i>
+         </button> 
+        </form>
+      
+      </div>
+    
+    </div>
+        
+     </div>
+        
+     </div>
+  
+    </main>
+    
+    <script src="/javascript/picModal.js"></script>
+    <script src="/javascript/add-artist.js"></script>
+    <script src="/javascript/logout.js"></script>
