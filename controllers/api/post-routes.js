@@ -141,9 +141,6 @@ router.put('/:id', withAuth, (req, res) => {
 
 // DESTROY post
 router.delete('/:id', (req, res) => {
-
-
-
   Post.destroy(
     {
       where: {
