@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS the_informed_artist_db;
+DROP DATABASE IF EXISTS art_db;
 
-CREATE DATABASE the_informed_artist_db;
+CREATE DATABASE art_db;

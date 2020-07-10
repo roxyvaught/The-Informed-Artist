@@ -16,4 +16,9 @@ module.exports = {
           .split('/')[0]
           .split('?')[0];
     },
+    format_count: count => {
+      var amount = (count +1)
+       return amount ;
+   }
+
  }
