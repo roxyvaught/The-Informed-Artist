@@ -12,6 +12,7 @@
 ## Table of contents
 --------------------
 * [General info](#general-info)
+* [Developed by](#developed-by)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Testing](#testing)
@@ -22,7 +23,7 @@
 This project was created as an exercise practicing creating a site using the Model-View-Controller (MVC) directory organization
 and its respective npm packages.
 
-## Developed by: ##
+## Developed by: 
 * [Roxanna Vaught-Mijares](https://github.com/roxyvaught)
 * [Nicholas Kosik](https://github.com/Thor40) 
 * [Michael Silva](https://github.com/Silvam2017)
