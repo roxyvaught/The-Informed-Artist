@@ -1,4 +1,13 @@
-# The Informed Artist
+<h1 align="center">The Informed Artist</h1>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Javascript-brightgreen"/>
+    <img src="https://img.shields.io/badge/Mysql-red"/>
+    <img src="https://img.shields.io/badge/Node.js-success"/>
+    <img src="https://img.shields.io/badge/Sequelize-blue"/>  
+    <img src="https://img.shields.io/badge/Handlebars-orange"/>
+    <img src="https://img.shields.io/badge/Session-9cf"/>
+</p>
 
 ## Table of contents
 --------------------
