@@ -69,11 +69,19 @@ $ npm install serve-static
 --------------------
 ### To test this project, run the following in the terminal:
 ```
+Log into mysql
+```
+Database art_db;
+```
+Source db/schema.sql
+```
+Quit out
+```
 $ npm start
 ```
 The server should run on PORT 3001
 --------------------
-Alternatively, visit the deployed Heroku site [Heroku](https://dashboard.heroku.com/)
+Alternatively, visit the deployed Heroku site [Heroku](https://the-informed-artist.herokuapp.com/)
 
 ## Features
 --------------------
