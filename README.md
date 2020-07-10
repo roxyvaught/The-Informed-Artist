@@ -21,6 +21,13 @@
 --------------------
 This project was created as an exercise practicing creating a site using the Model-View-Controller (MVC) directory organization
 and its respective npm packages.
+
+## Developed by: ##
+* [Roxanna Vaught-Mijares](https://github.com/roxyvaught)
+* [Nicholas Kosik](https://github.com/Thor40) 
+* [Michael Silva](https://github.com/Silvam2017)
+* [Andrea Ballew](https://github.com/andytheelf)
+
 	
 ## Technologies
 --------------------
