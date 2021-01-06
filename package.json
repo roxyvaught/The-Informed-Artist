@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Silvam2017/the-informed-artist#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^6.1.1",
     "dotenv": "^8.2.0",
